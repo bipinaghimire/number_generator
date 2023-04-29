@@ -28,7 +28,7 @@ class _NumberCheckerState extends State<NumberChecker> {
     });
   }
 
-  void checkAnswer() {
+  void checkAnswer(int num1, int num2) {
     if (++attempts > 10) {
       restartGame();
     } else {
@@ -64,13 +64,13 @@ class _NumberCheckerState extends State<NumberChecker> {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    checkAnswer();
+                    checkAnswer(num1, num2);
                   },
                   child: Text('$num1'),
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    checkAnswer();
+                    checkAnswer(num2, num1);
                   },
                   child: Text('$num2'),
                 )
